@@ -1,6 +1,6 @@
 const express = require("express");
 const db = require("../data/db-config");
-const postModel = require("./post-model");
+const postModel = require("../data/post-model");
 const router = express.Router({mergeParams:true});
 
 router.get("/", async(req,res,next) => {
