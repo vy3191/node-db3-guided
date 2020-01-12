@@ -4,8 +4,10 @@ function find() {
    return db("users").select();
 }
 
-function findById() {
-
+function findById(id) {
+    return db('users')
+             .where({id})
+             .first()
 }
 
 function add() {
