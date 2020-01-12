@@ -10,16 +10,20 @@ function findById(id) {
              .first()
 }
 
-function add() {
+async function add(userData) {
+   const [id] = await db('users').insert(userData);
+   return db("users").where({id}).first();  
 
 }
 
-function update() {
-
+async function update(id, body) {
+  await db('users').where({ id }).update(body);
+  return findById(id);
+  
 }
 
-function remove() {
-
+function remove(id) {
+  return db('users').where({ id }).del();
 }
 
 
